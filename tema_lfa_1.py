@@ -1,6 +1,8 @@
 #stochez graful intr-un dictionar de dictionare de tipul {noduri_curente : {muchii : [lista_noduri_urmatoare]}}.
 #fisierul text trebuie sa citeasca pe prima linie starile finale (de tipul qi), 
 #iar pe liniile urmatoare nodul curent, muchia si nodul la care ajunge prin muchia respectiva.
+#momentan doar accepta/respinge cuvantul. trebuie sa afisez si drumurile.
+#merge si pt DFA si pt NFA
 d = {}
 f = open("input.txt", "r")
 s = f.readline()
