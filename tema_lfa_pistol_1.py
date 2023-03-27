@@ -1,6 +1,7 @@
 #citesc, din fisierul automat.in, pe prima linie, starile finale(separate prin spatii), apoi pe fiecare linie
 #nodul, muchia si nodul la care ajunge prin muchia respectiva(separate tot prin spatii);
 #salvez automatul intr-un dictionar de dictionare de forma keyStare:{keyMuchie:[listaStariUrmatoare]}.
+import copy
 d = {}
 f = open('automat.in', 'r')
 s = f.readline()
@@ -28,10 +29,10 @@ for caracter in sir:
             if caracter in d[stare]: #daca exista muchia cu caracterul curent
                 L = d[stare][caracter] #starile la care se ajunge la muchia respectiva
                 for i in L: #adaug in alta lista drumurile la care adaug si starea urmatroare
-                    aux = drum.copy()
+                    aux = copy.deepcopy(drum)
                     aux.append(i)
                     drumuri_noi.append(aux)
-    drumuri = drumuri_noi.copy() #actualizez lista de drumuri
+    drumuri = copy.deepcopy(drumuri_noi) #actualizez lista de drumuri
     if drumuri == []: #daca niciun drum nu mai poate inainta
         print('NU ESTE ACCEPTAT!')
         break
